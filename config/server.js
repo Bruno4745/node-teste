@@ -17,14 +17,6 @@ app.use(function (req, res, next) {
     next();
 })
 
-//  app.all('/', function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Methods", "POST, PUT, DELETE, GET, OPTIONS");
-//     res.header("Access-Control-Request-Method", "*");
-//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//     next()
-//   });
-
 consign()
 .include('./routes')
 .then('./config/database.js')

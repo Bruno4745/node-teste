@@ -11,6 +11,7 @@ module.exports = (app) => {
             } else {
                 console.log(err);
             };
+            connection.end();
         });
     });
     
