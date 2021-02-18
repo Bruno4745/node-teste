@@ -9,12 +9,11 @@ module.exports = (app) => {
       
       if(!err) {
         res.json(result);
+        connection.end();
       } else {
         console.log(err);
+        connection.end();
       };
     });
-
-    connection.end();
-    
   });
 };

@@ -8,12 +8,12 @@ module.exports = (app) => {
         query.getDepoimento(connection, (err, result) => {
             if(!err) {
                 res.json(result);
+                connection.end();
             } else {
                 console.log(err);
+                connection.end();
             };
         });
-
-        connection.end();
     });
     
     app.post('/faleconosco/depoimento', (req, res) => {
@@ -25,12 +25,12 @@ module.exports = (app) => {
 
         query.postDepoimento(conteudo, connection, (err, result) => {
             if(!err) {
-            res.json(result);
+                res.json(result);
+                connection.end();
             } else {
-            console.log(err);
+                console.log(err);
+                connection.end();
             };
         });
-
-        connection.end();
     });
 };

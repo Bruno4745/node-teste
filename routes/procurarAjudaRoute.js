@@ -8,12 +8,12 @@ module.exports = (app) => {
         query.getProcurarAjuda(connection, (err, result) => {
             if(!err) {
                 res.json(result);
+                connection.end();
             } else {
                 console.log(err);
+                connection.end();
             };
         });
-        
-        connection.end();
     });
     
     app.post('/procurarAjuda', (req, res) => {
@@ -25,13 +25,13 @@ module.exports = (app) => {
 
         query.postProcurarAjuda(conteudo, connection, (err, result) => {
             if(!err) {
-            res.json(result);
+                res.json(result);
+                connection.end();
             } else {
-            console.log(err);
+                console.log(err);
+                connection.end();
             };
         });
-
-        connection.end();
     });
     
     app.put('/procurarAjuda/:id' , (req, res) => {
@@ -45,13 +45,13 @@ module.exports = (app) => {
 
         query.putProcurarAjuda(conteudo, id, connection, (err, result) => {
             if(!err) {
-            res.json(result);
+                res.json(result);
+                connection.end();
             } else {
-            console.log(err);
+                console.log(err);
+                connection.end();
             };
         });
-
-        connection.end();
     });
 
     app.delete('/procurarAjuda/:id', (req, res) => {
@@ -64,13 +64,13 @@ module.exports = (app) => {
 
         query.deleteProcurarAjuda(id, connection, (err, result) => {
             if(!err) {
-            res.json(result);
+                res.json(result);
+                connection.end();
             } else {
-            console.log(err);
+                console.log(err);
+                connection.end();
             };
         });
-        
-        connection.end();
     });
 
     app.post('/fazerLogin', (req, res) => {
@@ -85,12 +85,12 @@ module.exports = (app) => {
             if(result.length == 1) {
                 //console.log(result);
                 res.sendStatus(200);
+                connection.end();
             } else {
                 //console.log(result);
                 res.sendStatus(404);
+                connection.end();
             };
         });
-        
-        connection.end();
     });
 };
