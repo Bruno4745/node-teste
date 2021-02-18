@@ -10,11 +10,10 @@ module.exports = (app) => {
         query.postContato(conteudo, connection, (err, result) => {
             if(!err) {
                 res.json(result);
-                connection.end();
             } else {
                 console.log(err);
-                connection.end();
             };
+            connection.end();
         });
     });
 };

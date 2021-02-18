@@ -19,12 +19,11 @@ module.exports = (app) => {
         query.postDenuncia(conteudo, connection, (err, result) => {
             if(!err) {
                 res.json(result);
-                connection.end();
             } else {
                 console.log(err);
-                connection.end();
             };
             // console.log(conteudo);
+                connection.end();
         });
     });
 };
