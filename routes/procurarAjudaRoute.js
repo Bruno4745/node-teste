@@ -15,7 +15,7 @@ module.exports = (app) => {
         });
     });
     
-    app.options('/procurarAjudaCadastrar', (req, res) => {
+    app.post('/procurarAjuda', (req, res) => {
 
         const conteudo = req.body;
         //console.log(conteudo);
@@ -28,11 +28,10 @@ module.exports = (app) => {
             } else {
                 console.log(err);
             };
-            connection.end();
         });
     });
     
-    app.options('/procurarAjudaAlterar/:id' , (req, res) => {
+    app.put('/procurarAjuda/:id' , (req, res) => {
 
         const id = req.params.id;
         //console.log(id);
@@ -47,7 +46,6 @@ module.exports = (app) => {
             } else {
                 console.log(err);
             };
-            connection.end();
         });
     });
 
@@ -85,7 +83,7 @@ module.exports = (app) => {
                 //console.log(result);
                 res.sendStatus(404);
             };
-            connection.end();
+                connection.end();
         });
     });
 };
