@@ -1,7 +1,7 @@
 const app = require('./config/server')
 const server = require('./config/serverChat')
 
-const port = 80;
+const port = process.env.PORT || 80;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
