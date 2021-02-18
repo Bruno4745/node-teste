@@ -12,6 +12,8 @@ module.exports = (app) => {
                 console.log(err);
             };
         });
+
+        connection.end();
     });
     
     app.post('/faleconosco/depoimento', (req, res) => {
@@ -28,5 +30,7 @@ module.exports = (app) => {
             console.log(err);
             };
         });
+
+        connection.end();
     });
 };

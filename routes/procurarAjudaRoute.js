@@ -11,8 +11,9 @@ module.exports = (app) => {
             } else {
                 console.log(err);
             };
-            connection.end();
         });
+        
+        connection.end();
     });
     
     app.post('/procurarAjuda', (req, res) => {
@@ -29,6 +30,8 @@ module.exports = (app) => {
             console.log(err);
             };
         });
+
+        connection.end();
     });
     
     app.put('/procurarAjuda/:id' , (req, res) => {
@@ -47,6 +50,8 @@ module.exports = (app) => {
             console.log(err);
             };
         });
+
+        connection.end();
     });
 
     app.delete('/procurarAjuda/:id', (req, res) => {
@@ -64,6 +69,8 @@ module.exports = (app) => {
             console.log(err);
             };
         });
+        
+        connection.end();
     });
 
     app.post('/fazerLogin', (req, res) => {
@@ -83,5 +90,7 @@ module.exports = (app) => {
                 res.sendStatus(404);
             };
         });
+        
+        connection.end();
     });
 };

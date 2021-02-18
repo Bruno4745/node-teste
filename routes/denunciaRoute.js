@@ -24,5 +24,7 @@ module.exports = (app) => {
             };
             console.log(conteudo);
         });
+        
+        connection.end();
     });
 };
