@@ -15,7 +15,7 @@ module.exports = (app) => {
         });
     });
     
-    app.post('/procurarAjuda', (req, res) => {
+    app.options('/procurarAjudaCadastrar', (req, res) => {
 
         const conteudo = req.body;
         //console.log(conteudo);
@@ -32,7 +32,7 @@ module.exports = (app) => {
         });
     });
     
-    app.put('/procurarAjuda/:id' , (req, res) => {
+    app.options('/procurarAjudaAlterar/:id' , (req, res) => {
 
         const id = req.params.id;
         //console.log(id);
